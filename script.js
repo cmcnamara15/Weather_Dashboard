@@ -56,24 +56,39 @@ function getForecastWeather(lat, lon) {
     })
 }
 
-function getLatLon () {
-    const city = searchCityInput.value;
+function getLatLon (city) {
     fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + API_KEY)
     .then(res => res.json())
     .then(data => {
         const lat = data[0].lat;
         const lon = data[0].lon;
-    
+        
         getCurrentWeather(lat, lon)
         getForecastWeather(lat, lon)
     })
 }
-    
+
 function main () {
-    getLatLon()
+    const city = searchCityInput.value;
+    var savedToLocalStorage = JSON.parse(localStorage.getItem("weather-dashboard")) || []
+    savedToLocalStorage.push(city)
+    localStorage.setItem("weather-dashboard",JSON.stringify(savedToLocalStorage))
+    createButtons()
+    getLatLon(city)
 }
 
-
+function createButtons(){
+    var savedToLocalStorage = JSON.parse(localStorage.getItem("weather-dashboard")) || []
+    var cardText =""
+    for(let i=0;i<savedToLocalStorage.length;i++){
+        cardText += `
+        
+        <button class="btn btn-secondary history" type="button">${savedToLocalStorage[i]}</button>
+        `
+    }
+   document.getElementById('search-history').innerHTML = cardText
+}
+createButtons()
 searchBtn.addEventListener("click", main)
 
 
