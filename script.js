@@ -12,19 +12,19 @@ function getCurrentWeather (lat, lon) {
         const tempEle = document.createElement("h6")
         
 
-        var cardText = `<div class="card bg-warning" style="width: 18rem;">
+        var cardText = `<div class="card bg-warning" style="width: 25rem;">
         <div class="card-body">
         <h4 class="card-title">${data.name}</h4>
         <span  class="card-title">Description: ${data.weather[0].description}
         <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class="img-fluid icon" alt="weather icon">
         
         </span>
-          <h5 class="card-title">Temp:${data.main.temp}</h5>
-          <p class="card-text">Humidity: ${data.main.humidity}</p>
-          <p class="card-text">Wind Speed: ${data.wind.speed}</p>
+        <h5 class="card-title">Temp:${data.main.temp}</h5>
+        <p class="card-text">Humidity: ${data.main.humidity}</p>
+        <p class="card-text">Wind Speed: ${data.wind.speed}</p>
         </div>
-      </div>`
-      document.getElementById("current-forecast").innerHTML = cardText
+        </div>`
+        document.getElementById("current-forecast").innerHTML = cardText
 
     })  
 }
@@ -36,7 +36,7 @@ function getForecastWeather(lat, lon) {
         console.log(data)
         var cardText= ""
         for(i=0; i < data.list.length; i=i+8){
-            cardText += `<div class="card bg-primary" style="width: 18rem;">
+            cardText += `<div class="card bg-primary" style="width: 14rem;">
             <div class="card-body">
             <h4 class="card-title">${data.list[i].dt_txt}</h4>
             <span  class="card-title">Description: ${data.list[i].weather[0].description}
