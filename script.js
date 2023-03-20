@@ -87,8 +87,13 @@ function createButtons(){
         `
     }
    document.getElementById('search-history').innerHTML = cardText
+   document.querySelectorAll(".history").forEach(element => element.addEventListener("click",getForecastForSaved))
 }
 createButtons()
+function getForecastForSaved(event){
+    console.log(event.target.innerText)
+    getLatLon(event.target.innerText)
+}
 searchBtn.addEventListener("click", main)
 
 
