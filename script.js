@@ -1,7 +1,9 @@
+// ----- Created API key to use for project----
 const API_KEY = "16a8a9e40611abd4788ada155d01bb7e";
 const searchBtn = document.querySelector("#search-btn");
 const searchCityInput = document.querySelector("#search-city");
 
+// -----Function to get the searched citys current weather information and append on page------
 function getCurrentWeather (lat, lon) {
     fetch("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY+"&units=imperial")
     .then(res => res.json())
@@ -11,7 +13,7 @@ function getCurrentWeather (lat, lon) {
         h3Ele.innerText = data.name
         const tempEle = document.createElement("h6")
         
-
+// ------Used bootstrap code for cards used to display weather information-----
         var cardText = `<div class="card bg-warning" style="width: 25rem;">
         <div class="card-body">
         <h4 class="card-title">${data.name}</h4>
@@ -29,6 +31,7 @@ function getCurrentWeather (lat, lon) {
     })  
 }
 
+// ------Function which takes the parameters of lat and long to display the information of a searched city-----
 function getForecastWeather(lat, lon) {
     fetch("http://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY)
     .then(res => res.json())
@@ -56,6 +59,8 @@ function getForecastWeather(lat, lon) {
     })
 }
 
+
+// ----Function to get the latitude and longitude of a given city based on a search-------
 function getLatLon (city) {
     fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + API_KEY)
     .then(res => res.json())
@@ -68,6 +73,7 @@ function getLatLon (city) {
     })
 }
 
+// ------Main Function which calls on the functions createButtons and getLatLon to render the information on the page-----
 function main () {
     const city = searchCityInput.value;
     var savedToLocalStorage = JSON.parse(localStorage.getItem("weather-dashboard")) || []
@@ -77,6 +83,8 @@ function main () {
     getLatLon(city)
 }
 
+
+// -------Function wrote to create buttons based on search history -----
 function createButtons(){
     var savedToLocalStorage = JSON.parse(localStorage.getItem("weather-dashboard")) || []
     var cardText =""
