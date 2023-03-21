@@ -4,6 +4,10 @@
 
 This application was built using the openweather API. This project was built to return the current weather as well as a five-day forecast of any given city that the user chooses to input into the search. When the user searches
 
+## Deployed Link
+
+https://cmcnamara15.github.io/Weather_Dashboard/
+
 ## User Story
 
 ```
