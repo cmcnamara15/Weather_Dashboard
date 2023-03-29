@@ -62,7 +62,7 @@ function getForecastWeather(lat, lon) {
 
 // ----Function to get the latitude and longitude of a given city based on a search-------
 function getLatLon (city) {
-    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + API_KEY)
+    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + API_KEY)
     .then(res => res.json())
     .then(data => {
         const lat = data[0].lat;
