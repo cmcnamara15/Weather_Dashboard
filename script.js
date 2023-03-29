@@ -33,7 +33,7 @@ function getCurrentWeather (lat, lon) {
 
 // ------Function which takes the parameters of lat and long to display the information of a searched city-----
 function getForecastWeather(lat, lon) {
-    fetch("https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY)
+    fetch("HTTPS://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY)
     .then(res => res.json())
     .then(data => {
         console.log(data)
@@ -62,7 +62,7 @@ function getForecastWeather(lat, lon) {
 
 // ----Function to get the latitude and longitude of a given city based on a search-------
 function getLatLon (city) {
-    fetch("http://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + API_KEY)
+    fetch("HTTPS://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + API_KEY)
     .then(res => res.json())
     .then(data => {
         const lat = data[0].lat;
