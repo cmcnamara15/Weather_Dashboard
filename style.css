@@ -1,5 +1,8 @@
 #navbar {
     background: linear-gradient(to right, rgb(88, 88, 206), rgb(43, 43, 138));
+    align-content: center;
+    height: 55px;
+    margin: 10px;
 }
 
 aside {
@@ -13,4 +16,49 @@ aside {
 
 .cardbody {
     
+}
+
+body {
+    background-color: aqua;
+}
+
+h1,
+h2 {
+    color:blueviolet;
+}
+
+aside {
+    background-color:beige;
+}
+
+.col-form-label {
+    text-align: center;
+    margin: 10px;
+    font-weight: 500;
+}
+
+h3 {
+    text-align: center;
+}
+
+#search-btn {
+    margin-bottom: 15px;
+}
+
+.d-grid,
+.gap-2 {
+    margin: 10px,10px, 10px, 10px;
+}
+
+.btn-cont {
+    align-items: center;
+}
+
+.bg-primary {
+    margin-bottom: 25px;
+    margin-right: 10px;
+}
+
+#current-forecast {
+    width: 75%;
 }

@@ -3,7 +3,9 @@ const API_KEY = "16a8a9e40611abd4788ada155d01bb7e";
 const searchBtn = document.querySelector("#search-btn");
 const searchCityInput = document.querySelector("#search-city");
 
-// -----Function to get the searched citys current weather information and append on page------
+
+
+// -----Function to get the searched city current weather information and append on page------
 function getCurrentWeather (lat, lon) {
     fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY+"&units=imperial")
     .then(res => res.json())
@@ -62,7 +64,7 @@ function getForecastWeather(lat, lon) {
 
 // ----Function to get the latitude and longitude of a given city based on a search-------
 function getLatLon (city) {
-    fetch("HTTPS://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + API_KEY)
+    fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + city +"&appid=" + API_KEY)
     .then(res => res.json())
     .then(data => {
         const lat = data[0].lat;
