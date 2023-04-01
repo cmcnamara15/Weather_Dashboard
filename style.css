@@ -1,15 +1,14 @@
 #navbar {
     background: linear-gradient(to right, rgb(88, 88, 206), rgb(43, 43, 138));
     height: 55px;
-    margin: 10px;
+    /* margin: 10px; */
 }
 
 
 
-/* #nav-text {
-    color: beige;
-    float: right;
-} */
+#pageTitle {
+    text-align: center;
+}
 
 aside {
     width: 25%;
@@ -76,7 +75,18 @@ h5 {
 
 #forecastText,
 #fivedayText,
-#titleText {
+#titleText,
+#pageTitle,
+#label,
+#previous {
     font-family: 'Alkatra', cursive;
+}
+
+#fivedayText {
+    margin:15px;
+}
+
+#pageTitle {
+    color: bisque;
 
 }

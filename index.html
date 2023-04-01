@@ -18,18 +18,18 @@
 
 </head>
 <body>
-    <nav class="navbar bg-body-tertiary" id="navbar">
-        <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1 text-light" id='titleText'>Weather Dashboard</span>
-          <!-- <h3>Weather Dashboard</h3> -->
-        </div>
+    <nav id="navbar">
+        <!-- <div class="container-fluid"> -->
+          <!-- <span class="navbar-brand mb-0 h1 text-light" id='titleText'>Weather Dashboard</span> -->
+          <h1 id='pageTitle'>Weather Dashboard</h1>
+        <!-- </div> -->
       </nav>
 
       <main class="d-flex flex-row">
         <aside class="p-3 m-3">
             <div class="row g-3 align-items-center">
                 <div class="row">
-                  <label for="search-city" class="col-form-label">Search for a City:</label>
+                  <label for="search-city" class="col-form-label" id='label'>Search for a City:</label>
                 </div>
                 <div class="row btn-cont">
                   <input type="text" id="search-city" class="form-control" aria-describedby="passwordHelpInline">
@@ -39,7 +39,7 @@
                   </div>
               </div>
               <section class="row">
-                <h5> Previous Search</h5>
+                <h5 id ='previous'> Previous Search</h5>
                 <div id="search-history" class="d-grid gap-2">
                
                 </div>
@@ -47,7 +47,7 @@
         </aside>
         <section class="row">
             <h1 id='forecastText'>Forecast:</h1>
-            <article id="current-forecast" class="col-md-12 m-3 p-4">
+            <article id="current-forecast" class="col-md-12">
 
             </article>
             <h2 id='fivedayText'>5 Day Forecast:</h2>
