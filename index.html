@@ -13,12 +13,14 @@
     crossorigin="anonymous"
     ></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
+
 
 </head>
 <body>
     <nav class="navbar bg-body-tertiary" id="navbar">
         <div class="container-fluid">
-          <span class="navbar-brand mb-0 h1 text-light">Weather Dashboard</span>
+          <span class="navbar-brand mb-0 h1 text-light" id='titleText'>Weather Dashboard</span>
           <!-- <h3>Weather Dashboard</h3> -->
         </div>
       </nav>
@@ -44,11 +46,11 @@
               </section>
         </aside>
         <section class="row">
-            <h1>Forecast:</h1>
+            <h1 id='forecastText'>Forecast:</h1>
             <article id="current-forecast" class="col-md-12 m-3 p-4">
 
             </article>
-            <h2>5 Day Forecast:</h2>
+            <h2 id='fivedayText'>5 Day Forecast:</h2>
             <article id="fiveday-forecast" class="col-md-12 d-flex flex-wrap justify-content-evenly"></article>
         </section>
       </main>

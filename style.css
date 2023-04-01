@@ -73,3 +73,10 @@ h5 {
 #navbar {
     align-content: center;
 }
+
+#forecastText,
+#fivedayText,
+#titleText {
+    font-family: 'Alkatra', cursive;
+
+}
