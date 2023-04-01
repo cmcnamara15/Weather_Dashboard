@@ -1,9 +1,15 @@
 #navbar {
     background: linear-gradient(to right, rgb(88, 88, 206), rgb(43, 43, 138));
-    align-content: center;
     height: 55px;
     margin: 10px;
 }
+
+
+
+/* #nav-text {
+    color: beige;
+    float: right;
+} */
 
 aside {
     width: 25%;
@@ -37,7 +43,8 @@ aside {
     font-weight: 500;
 }
 
-h3 {
+h3,
+h5 {
     text-align: center;
 }
 
@@ -61,4 +68,8 @@ h3 {
 
 #current-forecast {
     width: 75%;
+}
+
+#navbar {
+    align-content: center;
 }
