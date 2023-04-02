@@ -16,7 +16,7 @@ function getCurrentWeather (lat, lon) {
         const tempEle = document.createElement("h6")
         
 // ------Used bootstrap code for cards used to display weather information-----
-        var cardText = `<div class="card bg-warning" style="width: 25rem;">
+        var cardText = `<div class="card bg-info" style="width: 25rem;">
         <div class="card-body">
         <h4 class="card-title">${data.name}</h4>
         <span  class="card-title">Description: ${data.weather[0].description}
@@ -41,7 +41,7 @@ function getForecastWeather(lat, lon) {
         console.log(data)
         var cardText= ""
         for(i=0; i < data.list.length; i=i+8){
-            cardText += `<div class="card bg-primary" style="width: 14rem;">
+            cardText += `<div class="card bg-warning" style="width: 14rem;">
             <div class="card-body">
             <h4 class="card-title">${data.list[i].dt_txt}</h4>
             <span  class="card-title">Description: ${data.list[i].weather[0].description}
