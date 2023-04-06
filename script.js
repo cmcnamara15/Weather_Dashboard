@@ -5,9 +5,10 @@ const searchCityInput = document.querySelector("#search-city");
 
 
 
+
 // -----Function to get the searched city current weather information and append on page------
 function getCurrentWeather (lat, lon) {
-    fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY+"&units=imperial")
+    fetch("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY+ "&units=imperial")
     .then(res => res.json())
     .then(data => {
         console.log(data)
@@ -30,36 +31,44 @@ function getCurrentWeather (lat, lon) {
         </div>`
         document.getElementById("current-forecast").innerHTML = cardText
 
+
     })  
 }
 
+
 // ------Function which takes the parameters of lat and long to display the information of a searched city-----
 function getForecastWeather(lat, lon) {
-    fetch("HTTPS://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY)
+    fetch("HTTPS://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + API_KEY + "&units=imperial")
     .then(res => res.json())
     .then(data => {
         console.log(data)
         var cardText= ""
         for(i=0; i < data.list.length; i=i+8){
+            var s = new Date(data.list[i].dt_txt).toLocaleDateString("en-US")
             cardText += `<div class="card bg-info" style="width: 14rem;">
             <div class="card-body">
-            <h4 class="card-title">${data.list[i].dt_txt}</h4>
+            <h4 class="card-title">${s}</h4>
             <span  class="card-title">Description: ${data.list[i].weather[0].description}
             <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png" class="img-fluid icon" alt="weather icon">
             
             </span>
-            <h5 class="card-title">Temp:${data.list[i].main.temp}</h5>
+            <h4 class="card-title">Temp:${data.list[i].main.temp} <span><h6>\xB0F</h6></span></h4>
             <p class="card-text">Humidity: ${data.list[i].main.humidity}</p>
             <p class="card-text">Wind Speed: ${data.list[i].wind.speed}</p>
             </div>
             </div>
 
             `
+            console.log(data.list[i].dt_txt)
+            // var s = new Date(data.list[i].dt_txt).toLocaleDateString("en-US")
+            console.log(s)
         }
         document.getElementById('fiveday-forecast').innerHTML = cardText
         
     })
 }
+
+
 
 
 // ----Function to get the latitude and longitude of a given city based on a search-------
@@ -105,6 +114,9 @@ function getForecastForSaved(event){
     getLatLon(event.target.innerText)
 }
 searchBtn.addEventListener("click", main)
+
+
+
 
 
 
