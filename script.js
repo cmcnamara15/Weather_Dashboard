@@ -24,7 +24,7 @@ function getCurrentWeather (lat, lon) {
         <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" class="img-fluid icon" alt="weather icon">
         
         </span>
-        <h5 class="card-title">Temp:${data.main.temp}</h5>
+        <h5 class="card-title">Temp:${data.main.temp}\xB0F</h5>
         <p class="card-text">Humidity: ${data.main.humidity}</p>
         <p class="card-text">Wind Speed: ${data.wind.speed}</p>
         </div>
@@ -52,7 +52,7 @@ function getForecastWeather(lat, lon) {
             <img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png" class="img-fluid icon" alt="weather icon">
             
             </span>
-            <h4 class="card-title">Temp:${data.list[i].main.temp} <span><h6>\xB0F</h6></span></h4>
+            <h4 class="card-title">Temp:${data.list[i].main.temp}\xB0</h4>
             <p class="card-text">Humidity: ${data.list[i].main.humidity}</p>
             <p class="card-text">Wind Speed: ${data.list[i].wind.speed}</p>
             </div>
