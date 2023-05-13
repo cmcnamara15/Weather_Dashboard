@@ -1,6 +1,7 @@
 # Weather Dashboard
 
 ## Description
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 This application was built using the openweather API. This project was built to return the current weather as well as a five-day forecast of any given city that the user chooses to input into the search. When the user searches
 
